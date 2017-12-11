@@ -1,0 +1,22 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" xmlns:l="sap.ui.layout"
+	controllerName="KapselStaNS.controller.chatbotview" height="100%">
+	<Page id="page" showHeader="true" enableScrolling="false">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Support" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<html:iframe id="chat" target='_top' height="100%" width="100%" scrolling='no'
+				src="https://console.api.ai/api-client/demo/embedded/46e6d6d5-b810-4cc9-86eb-cfa9c7bc29a0"></html:iframe>
+		</content>
+		<content/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,24 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns="sap.m"
+	controllerName="KapselStaNS.controller.Login" displayBlock="true">
+	<App>
+		<Page id="page" showHeader="true">
+			<customHeader>
+				<Bar>
+					<contentLeft>
+						<Image src="images/Atos.png" densityAware="false" width="80px"/>
+					</contentLeft>
+					<contentMiddle>
+						<Label text="LOGIN" design="Bold" width="100px" class="productscanner"/>
+					</contentMiddle>
+				</Bar>
+			</customHeader>
+			<VBox fitContainer="true" justifyContent="Center" alignItems="Center">
+				<Label id="lblLogin" text="Login ID" design="Bold" labelFor="inpLogin"/>
+				<Input id="inpLogin" editable="true" value="A638091" maxLength="20" tooltip="Enter Username"/>
+				<Label id="lblPWD" text="Password" design="Bold" labelFor="inpPWD" />
+				<Input id="inpPWD" type="Password" editable="true" value="Atos@123" maxLength="20" tooltip="Enter Password"/>
+				<Button id="bntLogin" text="Login" tap="actLogin" press="nav" tooltip="Click to Login"/>
+			</VBox>
+		</Page>
+	</App>
+</mvc:View>

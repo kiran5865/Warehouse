@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.viz"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{"KapselStaNS": ""}'
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style2.css">
+		<script type="text/javascript" src="cordova.js"></script>
+		
+		<script src="https://maps.googleapis.com/maps/api/js"></script> 
+
+    <!-- Chat Box using Iframe bottom right corner 
+        <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet" />
+    	<script src="https://use.fontawesome.com/6386545ece.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCztoZkowCgeAcgo8sRdDyEd55No9Gfo34&callback=initMap"></script>
+		<script type="text/javascript" src="google-library.js"></script>
+		
+	<style>
+        @charset "utf-8";
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        #box {
+            background: #911fca;
+            position: fixed;
+            z-index: 99999;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        #box h2 {
+            background: #333333;
+            color: #f2f2f2;
+        }
+
+        .wa {
+            float: left;
+            padding: 4px;
+            margin-right: 5px;
+            color: white;
+        }
+
+        #box .fa {
+            float: right;
+            padding: 4px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .min {
+            height: 25px;
+            max-width: 350px !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $("#box").delay(20000).fadeIn(800);
+            $('#toggle').click(function(e) {
+                $('#box').toggleClass('min');
+            });
+            $('#close').click(function(e) {
+                $("#box").fadeOut(800);
+            });
+        });
+    </script>-->
+    
+	<script type="text/javascript">
+		  /*=====================================================================
+		   The following onError function is used to trap any errors that occur
+		   while the application is running. Cordova fails silently whenever it
+		   encounters an error in HTML or JavaScript code. So, with that being
+		   the case, developers cannot tell when/why their applications are
+		   failing. Any code error will cause the function to fire and display
+		   the error in an alert dialog.
+		   ======================================================================*/
+		  window.onerror = function(msg, url, line) {
+			var idx = url.lastIndexOf("/");
+			if (idx > -1) {
+			  url = url.substring(idx + 1);
+			}
+			alert("ERROR in " + url + " (line #" + line + ")\n" + msg);
+			console.error(msg);
+			return false;
+		  };
+		</script>
+		<script>
+				function getUrlParameterName(sParam)
+				{
+					var sPageURL = window.location.search.substring(1);
+					var sURLVariables = sPageURL.split('&');
+					for (var i = 0; i < sURLVariables.length; i++) 
+					{
+						var sParameterName = sURLVariables[i].split('=');
+						if (sParameterName[0] === sParam) 
+						{
+							return true;
+						}
+					}
+					return false;
+				} 
+			
+			function startApp() {
+				sap.ui.getCore().attachInit(function() {
+					new sap.m.Shell({
+						app: new sap.ui.core.ComponentContainer({
+							height : "100%",
+							name : "KapselStaNS"
+						})
+					}).placeAt("content");
+				});
+			}
+				
+				window.onload = function() {
+					if (window.cordova || getUrlParameterName("companionbuster")) {
+						jQuery.sap.require("KapselStaNS.devapp");
+						var page = window.location.pathname.split("/").pop();
+		                if(page === "preview_hidden.html") {
+		                    window.sap_webide_FacadePreview = true;
+		                }
+						KapselStaNS.devapp.initialize();
+					}
+					else {
+						startApp();
+					}
+				}
+		</script>
+		
+	</head>
+	
+	<body class="sapUiBody">
+    <div id="content"></div>
+	<!--
+    <div id="box" style="display:none">
+        <div>
+            <span class="wa"><b>Contact Us</b></span>
+            <span id="close" class="fa fa-times"></span>
+            <span id="toggle" class="fa fa-window-restore"></span>
+        </div>
+        <iframe src="https://console.api.ai/api-client/demo/embedded/46e6d6d5-b810-4cc9-86eb-cfa9c7bc29a0" style="height:400px;"></iframe>
+    </div>
+    -->
+</body>
+</html>

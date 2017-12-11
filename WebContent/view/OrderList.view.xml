@@ -1,0 +1,63 @@
+<mvc:View
+	controllerName="KapselStaNS.controller.OrderList"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+<Page id="page" showHeader="true">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Show Order" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+      	<Table id="orderDetail" items="{ path : '/OrderList' }"> 
+				<items>
+					<ColumnListItem counter="0">
+						<cells>
+							<Text text="{PRODUCTID}" id="productId"/>
+							<Text text="{Order_NAME}" id="orderName"/>
+							<Text text="{Quantity}" id="quantity"/>
+							<Text text="{WEIGHT} gm" id="price"/>
+							<Text text="Rs {PRICE}" id="weight"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Product Id" id="lProductId"/>
+						</header>
+					</Column>
+					<Column>
+						<header>
+							<Label text="Item Name" id="lItemName"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Quantity" id="lQuantity"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" >
+						<header>
+							<Label text="Weight" id="lWeight" />
+						</header>
+					</Column>
+					<Column hAlign="Right">
+						<header>
+							<Label text="Price" id="lPrice"/>
+						</header>
+					</Column>
+
+				</columns>
+			</Table>
+	
+	</content>
+	</Page>
+</mvc:View>

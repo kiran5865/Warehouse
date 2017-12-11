@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns="sap.m" controllerName="KapselStaNS.controller.settings" displayBlock="true">
+	<Page enableScrolling="true" busyIndicatorDelay="500" showHeader="true">
+		<!--Header starts,includes logo and title-->
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="SETTINGS" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+				</content>
+		<!--Header Ends-->
+		
+		<!--Header starts,includes logo and title-->
+		<Panel class="sapUiDemoFlexBoxSizeAdjustments" expanded="true" width="auto">
+			<FlexBox alignItems="Start" class="reportchart">
+				<items>
+					<Toolbar>
+						<ComboBox id="mcb" items="{/LOCATIONS1}" selectionChange="displayList" placeholder="Choose Location" width="80%">
+							<core:Item key="{LNAME}" text="{LNAME}"/>
+							<layoutData>
+								<ToolbarLayoutData shrinkable="true"/>
+							</layoutData>
+						</ComboBox>
+						<Button width="20%" id="__button0" press="rec" icon="sap-icon://microphone" type="Emphasized" class="sapUiSmallMarginEnd"/>
+					</Toolbar>
+				</items>
+			</FlexBox>
+			<Toolbar>
+			<Input id="__input0" width="76%"/>
+			<Button text="GO" press="displayList" id="voice_btn" width="20%" class="sapUiSmallMarginEnd" type="Emphasized"/>
+			</Toolbar>			
+			
+		</Panel>
+		<Panel id="warehousePanel" class="panelStyle" expandable="true" expanded="true" headerText="Warehouses" width="auto">
+			<content>
+				<List noDataText="There are No Warehouses" id="idList" items="{path:'/results'}" selectionChange="onSelectionChange" mode="MultiSelect" includeItemInSelection="true">
+					<items>
+						<StandardListItem title="{NAME}" description="" icon="" iconDensityAware="false" iconInset="false"/>
+					</items>
+				</List>
+			</content>
+		</Panel>
+		<footer>
+			<Toolbar>
+				<content>
+					<Button id="callContact" text="support" type="Emphasized" icon="sap-icon://outgoing-call" tooltip="Call Contact" press="callContact"/>
+					<Button id="chatbbot" text="Help" press="gotochat" type="Emphasized" tooltip="Click to Open Chat"/>
+					<ToolbarSpacer/>
+					<Button text="Submit" width="auto" press="submitData" type="Emphasized" tooltip="Submit Warehouse">
+							<layoutData>
+								<ToolbarLayoutData shrinkable="true"/>
+							</layoutData>
+						</Button>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

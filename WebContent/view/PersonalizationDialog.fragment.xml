@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" >
+	<P13nDialog title="Maps" >
+
+			<HBox id="map_near" fitContainer="true" justifyContent="Center" alignItems="Center" height="500px"/>
+	</P13nDialog>
+</core:FragmentDefinition>

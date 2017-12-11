@@ -1,0 +1,262 @@
+/* Enter your custom styles here */
+	 
+	 .productscanner {
+    font-weight: bold;
+    width: 100px;
+    text-align: left;
+    font-size: large !important;
+	 }
+	 
+.background_default {
+  /* Location of the image */
+  background-image: url('12.jpg');
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+
+.v-m-root {
+	 background: rgb(255, 255, 255)
+}
+
+.sapMListTbl th {
+    background: rgba(0, 139, 199, 0.71);
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sapMListTbl td {
+    background: rgb(232, 240, 243, 0.71);
+    border-bottom: 1px solid #e5e5e5;
+}
+.blacky{
+	color:Black;
+}
+
+.sapMListTbl .sapMText,
+.sapMListTbl {
+    font-size: 0.875rem;
+    font-size: larger;
+    color:black;
+    font-weight: normal;
+}
+
+.sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sapMPanelContent {
+    padding: 1rem;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+
+.sapMPanelBGTranslucent {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sapMListBGTranslucent .sapMListTblHeader, .sapMListBGTranslucent .sapMListTblFooter {
+    background-color: rgba(255,255,255,0.8);
+}
+
+
+.sapMListBGTranslucent .sapMLIB {
+    background: rgba(255,255,255,0.8);
+}
+
+.sapMPanelHdr {
+    font-weight: normal;
+    font-size: 1.125rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0.0625rem 0 #d00d0d;
+    color: #333333;
+    background-color: rgba(229, 242, 248, 0.49);
+}
+
+.sapMListBGSolid .sapMLIB {
+    background: transparent;
+}
+
+.sapMIBar-CTX .sapMLabel {
+    color: #e6f2f9;
+    font-weight: normal;
+}
+
+
+.sapMFooter-CTX span.sapMBtnInner.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #2b81b0;
+    border-color: #008bc7;
+    color: #f3f0f0;
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+    font-size: large;
+}
+
+span.sapMBtnInner.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #2b81b0;
+    border-color: #008bc7;
+    color: #ffffff;
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+.location {
+    color: #1774a9;
+    font-weight: bold;
+    font-size: 1rem;
+    font-size: larger;
+}
+
+.menu {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+
+.issue {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+
+.receipt {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+
+.settings {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+
+.report {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+.dynamic {
+    color: #e6f2f9;
+    font-weight: normal;
+    text-align: left;
+    font-size: x-large;
+}
+
+.sapUiIcon {
+    cursor: default;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.sapMStdTileInfoSuccess {
+    color: white;
+}
+
+.sapMStdTileTitle {
+    line-height: 1.4rem;
+    vertical-align: top;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 4rem;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    color: black;
+}
+
+.sapMIBar.sapMHeader-CTX {
+    background-color: #c0ab70 !important;
+}
+.sapContrast.sapMIBar-CTX .sapMBtnInner, .sapContrast .sapMIBar-CTX .sapMBtnInner {
+    color: #bb0000;}
+
+html.sap-desktop .sapMIBar.sapMFooter-CTX {
+    background-color: #c0ab70 !important;
+}
+
+.sapMTile {
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    background-color: #ffffff;
+}
+
+.sapMTile {
+    color: white;
+    font-size: xx-large;
+    font-color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.receiptTile1 {
+    color: white;
+    align-item: center;
+    text-align: center !important;
+    font-size: 20px;
+    background-color: rgba(255, 165, 0, 0.78);
+    border-radius: 10px;
+    width: 12.5rem;
+}
+
+.issueeTile1 {
+    background-color: rgba(0, 157, 224, 0.78);
+    border-radius: 10px;
+    width: 12.5rem;
+}
+
+.reportTile1 {
+    background-color: rgba(0, 120, 51, 0.78);
+    border-radius: 10px;
+    width: 12.5rem;
+}
+
+.sapMLabel {
+    color: black;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal !important;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.settingTile1 {
+    background-color: rgba(181, 22, 22, 0.8);
+    border-radius: 10px;
+    width: 12.5rem;
+}
+.productscanningTile1 {
+   background-color: rgba(164, 69, 148, 0.78);
+    border-radius: 10px;
+    width: 12.5rem;
+}
+
+
+/* Enter your custom styles here */

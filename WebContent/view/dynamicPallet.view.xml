@@ -1,0 +1,100 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="KapselStaNS.controller.dynamicPallet">
+	<!--this view is responsible to scan bar code and add that product to purchase list-->
+	<Page title="Scan Order">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="PRODUCT SCANNER" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<!--Pallet simple form-->
+			<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form1">
+				<sap.ui.layout.form:content>
+					<Label text="Select Pallet" id="__label0"/>
+					<ComboBox selectedItem="pallet1" id="pallet" tooltip="Select Pallet ID">
+						<items>
+							
+						</items>
+					</ComboBox>
+					<Label text="ProductID" id="__label1"/>
+					<Input id="inputProductid" tooltip="Enter Product ID"/>
+					<Button text="Add Product" id="btnAddOrderByTxtBox" press="addOrderbyTextbox" type="Emphasized" tooltip="Click to Add Product"/>
+				</sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>
+			<!--Pallet simple form end-->
+			<!--Scan order Details on table-->
+			<Table id="orderDetail" items="{ path : '/OrderCollection',sorter : { path : 'Pallet_ID', group : true } }">
+				<items>
+					<ColumnListItem counter="0">
+						<cells>
+							<Text text="{Order_ID}" id="orderId"/>
+							<Text text="{PRODUCTID}" id="productId"/>
+							<Text text="{Order_NAME}" id="orderName"/>
+							<Text text="{Quantity}" id="quantity"/>
+							<Text text="{WEIGHT} gm" id="price"/>
+							<Text text="Rs {PRICE}" id="weight"/>
+							<Link text="DELETE" textAlign="Begin" id="delete" press="deleteOrder"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Sno" id="lOrderId"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Product Id" id="lProductId"/>
+						</header>
+					</Column>
+					<Column>
+						<header>
+							<Label text="Item Name" id="lItemName"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Quantity" id="lQuantity"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Weight" id="lWeight"/>
+						</header>
+					</Column>
+					<Column hAlign="Right">
+						<header>
+							<Label text="Price" id="lPrice"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="" id="lDelete"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+			<!--End scan order Details on table-->
+		</content>
+		<footer>
+			<Toolbar width="100%" id="__toolbar1">
+				<content>
+					<!--Buttons for scan Barcode to get order-->
+					<Button text="QR Scan" width="auto" id="barcodeButton" tooltip="Bar Code Scanner" press="addOrder" type="Emphasized"/>
+					<!--Button for add new pallet-->
+					<Button text="New Pallet" width="auto" id="btnAddPallet" press="addPallet" type="Emphasized" tooltip="Click to Create a New pallet"/>
+					<!--Button for submit all order into DB-->
+					<ToolbarSpacer/>
+					<Button text="Confirm Order" width="auto" id="btnSubmit" press="submitOrder" type="Emphasized" tooltip="Click to Confirm Order"/>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

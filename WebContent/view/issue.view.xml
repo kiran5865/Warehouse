@@ -1,0 +1,88 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns="sap.m" controllerName="KapselStaNS.controller.issue" displayBlock="true">
+	<App>
+	<Page id="page" showHeader="true">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="GOODS ISSUE" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<!--Pallet simple form-->
+				<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form1" visible="false">
+				<sap.ui.layout.form:content>
+					<!--Buttons for scan Barcode to get order-->
+					<Input ariaLabelledBy="__xmlview0--lItemName" id="__input0"/>
+					<Button id="enterPallet" press="enterpallet" text="Enter Pallet" type="Emphasized"/>
+				</sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>
+			<!--Pallet simple form end-->
+			<!--Order Details of sellected pallet on table-->
+	<!--	<ScrollContainer horizontal="true"  focusable="false" width="100%" height="100%">   -->
+				<Table id="orderDetail" items="{ path : '/OrderList' }"> 
+				<items>
+					<ColumnListItem counter="0">
+						<cells>
+							<Text text="{Order_ID}" id="orderId"/>
+							<Text text="{PRODUCTID}" id="productId"/>
+							<Text text="{Order_NAME}" id="orderName"/>
+							<Text text="{Quantity}" id="quantity"/>
+							<Text text="{WEIGHT} gm" id="price"/>
+							<Text text="Rs {PRICE}" id="weight"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Sno" id="lOrderId"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Product Id" id="lProductId"/>
+						</header>
+					</Column>
+					<Column>
+						<header>
+							<Label text="Item Name" id="lItemName"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Quantity" id="lQuantity"/>
+						</header>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="Weight" id="lWeight"/>
+						</header>
+					</Column>
+					<Column hAlign="Right">
+						<header>
+							<Label text="Price" id="lPrice"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		<!--	</ScrollContainer>   -->
+			<!--End scan order Details on table-->
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<Button id="barcodeButton" text="QR Scan" type="Emphasized" tooltip="Barcode Scanner" press="scanPallet"/>
+					<Button id="Display_Manual_ID" text="Manual Entry" press="Display_Manual_Entry" type="Emphasized" tooltip="Enter Product ID Manually"/>
+					<ToolbarSpacer/>
+					<Button text="Submit" press="submitItem" class="submitbutton" type="Emphasized" tooltip="Click to Submit"/>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+	</App>
+</mvc:View>

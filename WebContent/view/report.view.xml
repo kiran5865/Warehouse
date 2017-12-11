@@ -1,0 +1,44 @@
+<mvc:View xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" controllerName="KapselStaNS.controller.report" height="100%">
+	<Page id="page" showHeader="true" enableScrolling="false">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="GOODS REPORT" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<layout:FixFlex id="chartFixFlex" minFlexSize="250">
+			<layout:flexContent>
+				<viz:Popover id="idPopOver"/>
+				<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height="100%" width="100%" vizType="pie">
+					<viz:dataset>
+						<viz.data:FlattenedDataset data="{/GOODSISSUE}">
+							<viz.data:dimensions>
+								<viz.data:DimensionDefinition name="Location" value="{LOCATION}"/>
+							</viz.data:dimensions>
+							<viz.data:measures>
+								<viz.data:MeasureDefinition name="Quantity of Pallet" value="{QUANTITY}"/>
+							</viz.data:measures>
+						</viz.data:FlattenedDataset>
+					</viz:dataset>
+					<viz:feeds>
+						<viz.feeds:FeedItem uid="size" type="Measure" values="Quantity of Pallet"/>
+						<viz.feeds:FeedItem uid="color" type="Dimension" values="Location"/>
+					</viz:feeds>
+				</viz:VizFrame>
+			</layout:flexContent>
+		</layout:FixFlex>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer/>
+					<Button text="Locate on Maps" press="onMapsPress" class="submitbutton" type="Emphasized" tooltip="Click to View Maps"/>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

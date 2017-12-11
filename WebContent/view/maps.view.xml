@@ -1,0 +1,30 @@
+<mvc:View xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" xmlns:l="sap.ui.layout" controllerName="KapselStaNS.controller.maps" height="100%">
+	<Page id="page" showHeader="true">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="LOCATION" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<layout:FixFlex id="chartFixFlex" class="fixFlexHorizontal" vertical="false">
+			<layout:flexContent>
+				<HBox id="map_canvas" fitContainer="true" justifyContent="Center" alignItems="Center"/>
+			</layout:flexContent>
+		</layout:FixFlex>
+		<footer>
+			<Toolbar>
+				<content>
+					<Button id="NearBy" text="NearBy WareHouses" press="onPersonalizationDialogPress" type="Emphasized" tooltip="Click to Find NearBy Warehouses"/>
+					<Button id="email" text="Email" press="EmailTrigger" type="Emphasized" tooltip="Click to Contact Warehouse"/>
+					<ToolbarSpacer/>
+				</content>
+			</Toolbar>
+		</footer>
+		<content/>
+	</Page>
+</mvc:View>

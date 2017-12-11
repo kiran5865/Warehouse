@@ -1,0 +1,31 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns="sap.m" controllerName="KapselStaNS.controller.appHome">
+	<Page id="page" showHeader="true">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Image src="images/Atos.png" densityAware="false" width="80px"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="MENU" design="Bold" width="100px" class="productscanner"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<TileContainer editable="false" allowAdd="true" id="__container0">
+				<tiles>
+					<StandardTile title="Goods Issue" info="Inbound Details" icon="sap-icon://building" activeIcon="sap-icon://building" infoState="Success" class="issueeTile1" id="issueeTile" press="issue" tooltip="Click to Enter Goods Issue"/>
+					<StandardTile title="Goods Receipts" info="Outbound Details" icon="sap-icon://receipt" activeIcon="sap-icon://receipt" class="receiptTile1" id="receiptTile" press="receipt" infoState="Success" tooltip="Click to Enter Goods Reciept"/>
+					<StandardTile title="Reports" info="Graphical Reports" icon="sap-icon://activity-2" activeIcon="sap-icon://activity-2" infoState="Success" class="reportTile1" id="reportTile" press="report" tooltip="Enter Click to Enter Goods Report"/>
+					<StandardTile title="Settings" info="Access Customization" icon="sap-icon://settings" activeIcon="sap-icon://settings" infoState="Success" class="settingTile1" id="settingTile" press="settings" tooltip="Click to Enter Settings"/>
+					<StandardTile title="Product Scanning" info="Pallet Entry" icon="sap-icon://request" activeIcon="sap-icon://request" infoState="Success" class="productscanningTile1" id="productScanning" press="dynamic" tooltip="Click to Scan product"/>
+				</tiles>
+			</TileContainer>
+		</content>
+		<!--<footer>
+			<Toolbar active="true" design="Auto" height="50px">
+				<ToolbarSpacer/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>-->
+	</Page>
+</mvc:View>
