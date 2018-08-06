@@ -29,7 +29,18 @@
         }
     ],
     "objects": [
-	 {
+    {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "tls-secret"
+      },
+      "data" : {
+        "tls.crt" : "MIIDRzCCAi+gAwIBAgIJANHJREhvJPMMMA0GCSqGSIb3DQEBBQUAMDoxODA2BgNVBAMML3NhbXBsZS1kZXBsb3ltZW50LWRlbW8uYXBwcy1zaWVtZW5zLmFtb3NkZW1vLmlvMB4XDTE4MDcyNjA3MzY0NVoXDTI4MDcyMzA3MzY0NVowOjE4MDYGA1UEAwwvc2FtcGxlLWRlcGxveW1lbnQtZGVtby5hcHBzLXNpZW1lbnMuYW1vc2RlbW8uaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC28tsmEfZvVXI9Zz3sWyUuVv8tD50CYObhk1tpoVIcLiql31qAG6VGJzxghJDDYVsEOSht86pM/MpYye5xWcrYKVfDhWCKbpZ6U2tHjgN2CuJ1CgVJUhMaKYEod4bL9uC+IAwvaixLMSkJbX0UfG+L3F0CJ5pBY7ewrV4cOxuxZAv+gGu/XkZpAzLPE9XpnEe+/de0U4IqMBI57xYR7M/wjl1za0W0SoKLg2xflz4hBwXKqejlY++ndsWmMS8/t1DiJEKA6gyhkP7J+dpAAOU/TPDObfOPIeEU+68V9YhpY2XUpx/2Ykbv8lVxMcD1De4sff5q38SrtbRKA5tq0SJDAgMBAAGjUDBOMB0GA1UdDgQWBBQiIDQzuxgHMeVAGgcvT1L6fDHsXzAfBgNVHSMEGDAWgBQiIDQzuxgHMeVAGgcvT1L6fDHsXzAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQBtE8sood3UK7MNo635weaKMKgjJXqI5+J1df4z6lMNvkDN0Dbmv4/xgVjDrP99eyMBAri3pxq0rRob8TKSPFgLHhnDLvD0iJ1DBt2MSnGnM7SRx0AQ36CzhcAV0WLb/zJZpmfD7fyLnqpmFQNUi29KN4SV+J6x1jle8wBfOvSNgpjUaoUxJBv2Wpo8CzQ2FsnobVrnQWTr0CEOGnA8c/HHzUtnbCTZddPsgIpP/r6pXIWYzF8nqVEEiJyiVZcqkDpLx/6BZisKxS+RP8SQSrcWbrP+2JPnxUIkt0w4jK/BNiE5+IHh68GMhLr1Iyyb8BQ7Axz0py+RNpumgteinOCp",
+	"tls.key" : "MIIEowIBAAKCAQEAtvLbJhH2b1VyPWc97FslLlb/LQ+dAmDm4ZNbaaFSHC4qpd9agBulRic8YISQw2FbBDkobfOqTPzKWMnucVnK2ClXw4Vgim6WelNrR44DdgridQoFSVITGimBKHeGy/bgviAML2osSzEpCW19FHxvi9xdAieaQWO3sK1eHDsbsWQL/oBrv15GaQMyzxPV6ZxHvv3XtFOCKjASOe8WEezP8I5dc2tFtEqCi4NsX5c+IQcFyqno5WPvp3bFpjEvP7dQ4iRCgOoMoZD+yfnaQADlP0zwzm3zjyHhFPuvFfWIaWNl1Kcf9mJG7/JVcTHA9Q3uLH3+at/Eq7W0SgObatEiQwIDAQABAoIBAHiraOcMdAptRqO/pDVwzO5qzXcQVFSMS90/z8y1bi5OOS0dTFkxYusJ2CYlakKkxV7cwJD9ZjfPiTvVPWQggM3hPxUktU+5r6FRwnH49sl2VnYyPNhmvVjFRX7Gj++akBR3mPHxSvPxogqo4BaSGRUcLXDNZE57El8Diw594j83Chx0wpwN+tyvvpXJOCmOlFT5LnQtzgBJQ4xfFLO4MUsTybyVJGlOSfqDuckNFBF0qZ7X4AYN8GGPdCFhhjP83c0ecUmtnhkXHF4A089wpJ/IcYtXutH7fECP/vxG8OqJVia/IxmstyQK1k6Bo8Pp0FVjM5688/NfgP6H+urriSECgYEA8Oh79K6jSVmxsIqWIz+E41N8eUWPItHOHexf271u0shaRKFR5Lv1LtVNU6UsCsfT1rCmlIjf0qMvyzBu8sKaHN8i7G+gPN9gL75O04+bea9J7Hw7RO7AUREPgYxKYexL6Smw0HYPqXzb6oWOYouLiFBSZsP3Y2krqrXXDFUMErMCgYEAwmjbuEUoCPEZgDKSTrvvwuroOTolhoUtQN+iIxeo4KhfLqdb8dMz5ni4/OIauQcT+rXrJl6sBsyrJhD58vkeftbRbEl5GI5nzkZnTn0PROldrB9mxGLuJ5+9ocKCsEW0opNTKPv2S2kROkwFznCJHj9Poo+iy64sRksR/TonOjECgYEAzRrSdja9VLTlwM2tF+N7i2PIBSQAwn9oAjf+QQKeOR1VJTtHkvunurDl/gIRZjhNlmqd2LZUAWzoQxFAVLT0KwKbJDvBbDIuHVfkmuCYWVixEoOOnpi66gohboV3yrk4xBG3tTPfD8j7H0eIO0Rdjrf7//x2QpAHGndo2NoLxlsCgYB19NF72NoVstPaKNUE2Jr9FTKZpmImYJ+4gPgLesuIpCA8Wmc7Lv6KlC0Jota79UN2FvL6cO7HoV8m1Z4SgnyyUPz4SwwijiUFz0nXIaImGcIwMU1VUwFVIWMZxr8s3N5g1ira7yXdU36UdJQBUd6gb6GN7MDF/IP4kovzrVknwQKBgDsTxY8qLWaGCzN9DCvWVBi6VBqkN5oL3CG67qTCaU/uF/Ew0w8S6vQguZW7ZRsc6ibYpzjnlZyoNUls4xnmuTAAMUlL9hOjr0OR7HH1bm3I7esgXlJmLXCZtzEWIIhIvINRA1CDK/AnzNd30HxpmgJnMbybTBIt574l51agZWIX"  
+      },
+	  "type": "kubernetes.io/tls"
+    },{
       "kind": "Secret",
       "apiVersion": "v1",
       "metadata": {
@@ -80,14 +91,33 @@
                                 ],
                                 "ports": [
                                     {
+                                        "name": "${APPLICATION_NAME}-tcp-443",
+                                        "containerPort": 8443,
+                                        "protocol": "TCP"
+                                    },{
                                         "name": "${APPLICATION_NAME}-tcp-8080",
                                         "containerPort": 8080,
                                         "protocol": "TCP"
                                     }
+                                ],
+				 "volumeMounts": [
+                                    {
+                                        "name": "tls-secret-volume",
+                                        "mountPath": "/etc/tls-secret-volume",
+                                        "readOnly": "true"
+                                    }
+                                ],
+				"volumes": [
+                                    {
+                                        "name": "tls-secret-volume",
+                                        "secret": [{
+						"secretName": "tls-secret"
+					}]
+                                    }
                                 ]
                             }
                         ],
-						 "imagePullSecrets": [
+			"imagePullSecrets": [
                                     {
                                         "name": "acr-secret"
                                     }
@@ -100,9 +130,17 @@
             "kind": "Service",
             "apiVersion": "v1",
             "spec": {
+		"type": "ClusterIP",
                 "ports": [
                     {
+			"name":"${APPLICATION_NAME}-tcp-443"
+                        "port": 443,
+			"protocol": "TCP"
+                        "targetPort": 8080
+                    },{
+                        "name":"${APPLICATION_NAME}-tcp-8080"
                         "port": 8080,
+			"protocol": "TCP"
                         "targetPort": 8080
                     }
                 ],
@@ -136,7 +174,7 @@
             "spec": {
                 "host": "${APPLICATION_HOSTNAME}",
                 "to": {
-				    "kind": "Service",
+		    "kind": "Service",
                     "name": "${APPLICATION_NAME}"
                 }
             }
