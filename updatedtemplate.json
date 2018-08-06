@@ -91,11 +91,11 @@
                                 ],
                                 "ports": [
                                     {
-                                        "name": "https-443",
+                                        "name": "https",
                                         "containerPort": 8443,
                                         "protocol": "TCP"
                                     },{
-                                        "name": "http-8080",
+                                        "name": "http",
                                         "containerPort": 8080,
                                         "protocol": "TCP"
                                     }
@@ -133,12 +133,12 @@
 		"type": "ClusterIP",
                 "ports": [
                     {
-			"name":"https-443",
+			"name":"https",
                         "port": 443,
 			"protocol": "TCP",
                         "targetPort": 8080
                     },{
-                        "name":"http-8080",
+                        "name":"http",
                         "port": 8080,
 			"protocol": "TCP",
                         "targetPort": 8080
