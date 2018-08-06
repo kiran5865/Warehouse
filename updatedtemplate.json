@@ -1,0 +1,145 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "annotations": {
+            "iconClass" : "icon-java",
+            "description": "Generic Application template for Deploying Images to Openshift"
+        },
+        "name": "basic-deploy-template"
+    },
+    "labels": {
+        "template": "basic-deploy-template"
+    },
+    "parameters": [
+        {
+            "description": "The name for the application.",
+            "name": "APPLICATION_NAME",
+			"value":""
+        },
+        {
+            "description": "Hostname for service routes",
+            "name": "APPLICATION_HOSTNAME",
+			"value":""
+        },
+        {
+            "description": "Docker File for the Deployment",
+            "name": "DOCKER_FILE",
+			"value":""
+        }
+    ],
+    "objects": [
+	 {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "acr-secret"
+      },
+	  "data" : {
+        ".dockerconfigjson" : "eyJhdXRocyI6eyJkb2NrZXJyZWdpc3RyeTIuYXp1cmVjci5pbyI6eyJ1c2VybmFtZSI6IkRvY2tlclJlZ2lzdHJ5MiIsInBhc3N3b3JkIjoidFFVUThVMzBoTFdPeTdTYXFkWHJLL1ZoeCtsNkIwY1AiLCJlbWFpbCI6ImtpcmFuLWt1bWFyLnNAYXRvcy5uZXQiLCJhdXRoIjoiUkc5amEyVnlVbVZuYVhOMGNua3lPblJSVlZFNFZUTXdhRXhYVDNrM1UyRnhaRmh5U3k5V2FIZ3JiRFpDTUdOUSJ9fX0="
+      },
+	  "type": "kubernetes.io/dockerconfigjson"
+    },
+	{
+            "kind": "Deployment",
+            "apiVersion": "apps/v1beta1",
+            "metadata": {
+                "name": "${APPLICATION_NAME}",
+                "labels": {
+                    "app": "${APPLICATION_NAME}"
+                }
+            },
+            "spec": {
+                "replicas": 1,
+                "template": {
+                    "metadata": {
+                        "name": "${APPLICATION_NAME}",
+                        "labels": {
+                            "app": "${APPLICATION_NAME}"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "${APPLICATION_NAME}",
+                                "image": "${DOCKER_FILE}",
+                                "imagePullPolicy": "Always",
+								"env": [
+                                    {
+                                        "name": "env1",
+                                        "value": ""
+                                    },
+                                    {
+                                        "name": "env2",
+                                        "value": ""
+                                    },
+                                    {
+                                        "name": "env3",
+                                        "value": ""
+                                    }
+                                ],
+                                "ports": [
+                                    {
+                                        "name": "${APPLICATION_NAME}-tcp-8080",
+                                        "containerPort": 8080,
+                                        "protocol": "TCP"
+                                    }
+                                ]
+                            }
+                        ],
+						 "imagePullSecrets": [
+                                    {
+                                        "name": "acr-secret"
+                                    }
+                                ]
+                            }
+                    }
+                }
+        },
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [
+                    {
+                        "port": 8080,
+                        "targetPort": 8080
+                    }
+                ],
+                "selector": {
+                    "app": "${APPLICATION_NAME}"
+                }
+            },
+            "metadata": {
+                "name": "${APPLICATION_NAME}",
+                "labels": {
+                    "app": "${APPLICATION_NAME}"
+                },
+                "annotations": {
+                    "description": "The web server's http port."
+                }
+            }
+        },
+        {
+            "kind": "Route",
+            "apiVersion": "v1",
+            "id": "${APPLICATION_NAME}-http-route",
+            "metadata": {
+                "name": "${APPLICATION_NAME}-http-route",
+                "labels": {
+                    "app": "${APPLICATION_NAME}"
+                },
+                "annotations": {
+                    "description": "Route for application's http service."
+                }
+            },
+            "spec": {
+                "host": "${APPLICATION_HOSTNAME}",
+                "to": {
+				    "kind": "Service",
+                    "name": "${APPLICATION_NAME}"
+                }
+            }
+        }
+    ]
+}
