@@ -15,17 +15,17 @@
         {
             "description": "The name for the application.",
             "name": "APPLICATION_NAME",
-			"value":""
+	    "value":""
         },
         {
             "description": "Hostname for service routes",
             "name": "APPLICATION_HOSTNAME",
-			"value":""
+	    "value":""
         },
         {
             "description": "Docker File for the Deployment",
             "name": "DOCKER_FILE",
-			"value":""
+	     "value":""
         }
     ],
     "objects": [
@@ -75,7 +75,7 @@
                                 "name": "${APPLICATION_NAME}",
                                 "image": "${DOCKER_FILE}",
                                 "imagePullPolicy": "Always",
-								"env": [
+				"env": [
                                     {
                                         "name": "env1",
                                         "value": ""
