@@ -134,14 +134,14 @@
                 "ports": [
                     {
 			"name":"${APPLICATION_NAME}-tcp-443"
-                        "port": 443,
+                        "port": "443",
 			"protocol": "TCP"
-                        "targetPort": 8080
+                        "targetPort": "8080"
                     },{
                         "name":"${APPLICATION_NAME}-tcp-8080"
-                        "port": 8080,
+                        "port": "8080",
 			"protocol": "TCP"
-                        "targetPort": 8080
+                        "targetPort": "8080"
                     }
                 ],
                 "selector": {
